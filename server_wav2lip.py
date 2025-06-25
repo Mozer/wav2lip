@@ -396,7 +396,8 @@ def play_video_with_audio(video_file, audio_file, use_pyaudio=True, start_chunk=
     
     print(str(time.time())+" in play_video_with_audio, video: "+video_file + ", current_video_chunk: "+str(current_chunk))
    
-    #cv2.destroyAllWindows()    # prev windows if any
+    # Create a resizable window
+    cv2.namedWindow(caption, cv2.WINDOW_NORMAL)
     cap = cv2.VideoCapture(video_file)
     fps = cap.get(cv2.CAP_PROP_FPS)
     if (not fps): 
